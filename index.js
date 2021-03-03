@@ -1,17 +1,16 @@
 const fs = require("fs");
 const db = require("./db");
-const down = fs.readFileSync("./down.sql");
-const up = fs.readFileSync("./up.sql");
 
-async function runQueries() {
-  await db.query(down.toString());
-  await db.query(up.toString());
-}
+/*
+node index.js [question_id]
 
-runQueries()
-  .then(() => {
-    db.end()
-  })
-  .catch((e) => {
-    console.error(e)
-  })
+¿Que año gano messi el mundial?
+1: 2018
+2: 1998
+3: Nunca
+
+Rta? 1
+
+Perdiste!
+(Ganaste!)
+ */
