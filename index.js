@@ -42,7 +42,6 @@ const askQuestion = async (questionLabel, answers) => {
     const question = `${questionLabel}\n${answers.map((e) => `\n${e.n}- ${e.label}\n`).join('')}Ingrese un número: `;
     const userAnswer = await prompt(question);
     const correct = answers.find((e) => e.is_correct && `${e.n}` === userAnswer);
-
     return correct;
   } catch (error) {
     console.error('el error es: ', error);
@@ -51,24 +50,24 @@ const askQuestion = async (questionLabel, answers) => {
 
 const main = async (id) => {
   try {
-    const times = await prompt("¿A cuántas preguntas querés jugar? :");
+    // const times = await prompt("¿A cuántas preguntas querés jugar? :");
     // let points = 0;
 
-    for (let i = 0; i < Number(times); i ++) {
+    // for (let i = 0; i < Number(times); i ++) {
       // const nPreguntas = Question.getQuestionsCount();
       // const id = random(1, nPreguntas);
+      const id = 1;
       const { label: questionLabel } = await Question.getQuestion(id);
       const answers = await Question.getQuestionAnswers(id);
       const correct = await askQuestion(questionLabel, answers);
-
       if (correct) {
         console.log("Respuesta correcta!");
       } else {
         console.log("Respuesta incorrecta!");
       }
-    }
+    // }
 
-    console.log("Terminaster con ${}")
+    // console.log("Terminaster con ${}")
 
     db.end();
   } catch (error) {
