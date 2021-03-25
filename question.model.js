@@ -1,6 +1,6 @@
 const db = require("./db");
 
-export const getQuestion = async (id) => {
+const getQuestion = async (id) => {
   let question = await db.query(
     `
         SELECT * FROM questions WHERE id = ${id};
@@ -9,7 +9,7 @@ export const getQuestion = async (id) => {
   return question.rows[0];
 }
 
-export const getQuestionAnswers = async (id) => {
+const getQuestionAnswers = async (id) => {
   const answers = await db.query(
     `
         SELECT * FROM answers WHERE question_id = ${id};
@@ -18,16 +18,18 @@ export const getQuestionAnswers = async (id) => {
   return answers.rows;
 }
 
-export const getQuestionsCount = async () => {
+const getQuestionsCount = async () => {
   // TODO: resolver via query SQL
 }
 
-export const getQuestionTopics = async () => {
+const getQuestionTopics = async () => {
   // TODO
   /*
     SELECT DISTINCT topic from questions;
    */
 }
-export const getQuestionsForTopic = async (topic) => {
+const getQuestionsForTopic = async (topic) => {
   // TODO
 }
+
+module.exports = { getQuestion, getQuestionAnswers, getQuestionsCount, getQuestionTopics, getQuestionsForTopic };

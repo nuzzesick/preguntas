@@ -4,7 +4,7 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-export const prompt = (askToUserStr) => {
+const prompt = (askToUserStr) => {
   return new Promise((resolve) => {
     rl.question(`${askToUserStr}`, (userAnswer) => {
       resolve(userAnswer);
@@ -13,6 +13,8 @@ export const prompt = (askToUserStr) => {
   });
 }
 
-export const random = (min, max) => {
+const random = (min, max) => {
   // TODO: resolver via Math.random y operaciones matematicas convencionales.
 }
+
+module.exports = { prompt, random };
