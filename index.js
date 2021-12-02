@@ -2,6 +2,9 @@ const db = require("./db");
 const { prompt } = require("./utils");
 const Question = require("./question.model");
 
+
+/*
+
 /*
 
 Primera tarea: Chequear que este codigo funcione como estaba funcionando pero con más preguntas.

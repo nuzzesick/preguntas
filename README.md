@@ -3,6 +3,11 @@
 
 # Setup
 
+### Install deps
+````
+npm install
+````
+
 ### Run the docker with the database
 ````
 # Crete a docker image with name preguntas_pg
