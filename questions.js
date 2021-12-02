@@ -2,14 +2,21 @@
 // generar el n del answer como el índice + 1
 module.exports = [
 	{
-		label: 'Mi pregunta',
-
+		label: '¿Quién gano más balones de oro?',
+		topic: 'deportes'
 		answers: [
 			{
-				label: 'some label',
+				label: 'Messi',
 				is_correct: true	
+			},
+			{
+				label: 'Ronaldo',
+				is_correct: false	
+			},
+			{
+				label: 'Kaka',
+				is_correct: false	
 			}
 		]
 	}
-
 ]
